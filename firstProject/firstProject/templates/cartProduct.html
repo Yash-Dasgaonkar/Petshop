@@ -1,0 +1,44 @@
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{{p.product_picture.url}}" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+
+          {% if decision %}
+          <h5 class="card-title" style="color:red;">{{p.id}}: {{p.product_name | upper}}</h5>
+          {% elif last %}
+          <h5 class="card-title" style="color:green;">{{p.id}}: {{p.product_name | upper}}</h5>
+   {%else%}
+          <h5 class="card-title" >{{p.id}}: {{p.product_name | upper}}</h5>
+          {% endif %}
+
+       
+          <p class="card-text"><b>{{p.product_description |first }}</b>{{p.product_description|slice:"1:"}}</p>
+          <p class="card-text">{{p.product_price|floatformat:2}}</p>
+
+          
+          <p class="card-text"><small class="text-muted"></small></p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          
+
+          <p class="card-text">{{p.product_price|floatformat:3}}</p>
+
+          
+          {% comment %}
+          
+          <p class="card-text"><small class="text-muted">{{p.product_Brand|length}}</small></p>
+          <p class="card-text"><small class="text-muted">{{56.7889 |floatformat:2}}</small></p>
+          <p class="card-text"><small class="text-muted">{{"Nisha" |length_is:15}}</small></p>
+          <p class="card-text"><small class="text-muted">{{"nisha"|add:"bye"}}</small></p>
+          <p class="card-text"><small class="text-muted">{{5|add:6 }}</small></p>
+          <p class="card-text"><small class="text-muted">{{ "Nisha"|cut:"N" }}</small></p> 
+          
+          {% endcomment %}
+
+          
+        </div>
+      </div>
+    </div>
+  </div>

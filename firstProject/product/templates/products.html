@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{background-color: pink;
+        
+        }
+        .product_name{
+            color: darkgreen;
+        }
+        .product_description{
+            color: blue ;
+        }
+    </style>
+</head>
+<body>
+    {% comment %} <h1><a href="{%url 'homepage' %}">Product list </a></h1> {% endcomment %}
+    <h1>{{request.session.currentUser}}</h1>
+    {% for product  in  object_list %}
+
+    <ul>
+        <li class = "product_name"><a href="{%url  'productdetail' product.id %}">Name::{{product.product_name}}</a></li>
+        <li class = "product_description">Description::{{product.product_description}}</li>
+        <div><img src="{{product.product_picture.url}}" alt=""></div>
+    </ul>
+
+    {% endfor %}
+</body>
+</html>
